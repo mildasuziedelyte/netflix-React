@@ -17,7 +17,7 @@ export default function Header({
   return (
       bg ? 
       <Background {...restProps} > {children} </Background> :
-      {children}
+      children
   );
 }
 
