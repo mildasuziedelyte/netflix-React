@@ -1,14 +1,16 @@
 import React from 'react';
+import { BrowseContainer } from '../containers/browse';
 import {useContent} from '../hooks';
+import selectionFilter from '../utils/selection-filter'
 
 export default function Browse() {
-    const { series } = useContent('series');
 
-    console.log(series);
-    // we need series and films in header
-    // slides
-    // pass it to the browse container
+    const { series } = useContent('series');
+    const { films } = useContent('films');
+
+    const slides = selectionFilter({ series, films });
+
     return (
-        <p>Hello from the browse!</p>
+        <BrowseContainer slides={slides}/>
     );
 }
