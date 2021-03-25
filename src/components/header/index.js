@@ -4,7 +4,10 @@ import {
     Container, 
     Background,
     Logo, 
-    ButtonLink
+    ButtonLink, 
+    Feature,
+    Text,
+    FeatureCallOut
 } from './styles/header';
 
 import {Link as ReactRouterLink } from 'react-router-dom';
@@ -19,6 +22,18 @@ export default function Header({
       <Background {...restProps} > {children} </Background> :
       children
   );
+}
+
+Header.Feature = function HeaderFeature({children, ...restProps}){
+    return <Feature {...restProps}>{children}</Feature>
+}
+
+Header.Text = function HeaderText({children, ...restProps}){
+    return <Text {...restProps}>{children}</Text>
+}
+
+Header.FeatureCallOut = function HeaderFeatureCallOut({children, ...restProps}){
+    return <FeatureCallOut {...restProps}>{children}</FeatureCallOut>
 }
 
 Header.Frame = function HeaderFrame({children, ...restProps }) {
