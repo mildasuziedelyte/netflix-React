@@ -4,7 +4,7 @@ import * as ROUTES from '../constants/routes';
 import logo from '../logo.svg';
 
 export function SelectProfileContainer({ user, setProfile }) {
-  console.log(user)
+
   return (
     <>
         <Header bg={false}>
@@ -16,10 +16,16 @@ export function SelectProfileContainer({ user, setProfile }) {
         <Profiles>
             <Profiles.Title>Who's watching?</Profiles.Title>
             <Profiles.List>
-                 <Profiles.User>
+                  <Profiles.User 
+                    onClick={() => 
+                      setProfile({
+                        displayName: user.displayName,
+                        photoURL: user.photoURL,
+                      })
+                    }
+                  >
                     <Profiles.Picture src={user.photoURL} />
                     <Profiles.Name>{user.displayName}</Profiles.Name>
-
                  </Profiles.User>
             </Profiles.List>
         </Profiles>
