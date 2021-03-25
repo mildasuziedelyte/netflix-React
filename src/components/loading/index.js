@@ -1,12 +1,10 @@
 import React from 'react';
 
 import { 
-    Container,
-    Title,
-    List,
-    Picture,
-    Name,
-    Item
+    Spinner, 
+    LockBody,
+    ReleaseBody,
+    Picture
 } from './styles/loading';
 
 export default function Loading({
@@ -14,8 +12,13 @@ export default function Loading({
     ...restProps 
 }) {
   return (
-      <Spinner>
+      <Spinner {...restProps}>
           <LockBody />
+          <Picture src={`/images/users/${src}.png`} />
       </Spinner>
   );
+}
+
+Loading.ReleaseBody = function LoadingrealeaseBody() {
+    return <ReleaseBody />
 }
