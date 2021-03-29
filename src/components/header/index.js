@@ -15,7 +15,8 @@ import {
     Dropdown,
     Search,
     SearchIcon,
-    SearchInput
+    SearchInput,
+    PlayButton
 } from './styles/header';
 
 import {Link as ReactRouterLink } from 'react-router-dom';
@@ -102,4 +103,8 @@ Header.Search = function HeaderSearch ({searchTerm, setSearchTerm, ...restProps}
         </Search>
 
     )
+}
+
+Header.PlayButton = function HeaderPlayButton({children, ...restProps}){
+    return <PlayButton {...restProps}>{children}</PlayButton>
 }
