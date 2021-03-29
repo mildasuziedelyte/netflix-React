@@ -79,5 +79,5 @@ Header.Picture = function HeaderPicture({src, ...restProps}){
 }
 
 Header.Profile = function HeaderProfile({ children, ...restProps }){
-    return <Profile {...restProps}> {children}</Profile>
+    return <Profile {...restProps}>{children}</Profile>
 }
