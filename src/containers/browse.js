@@ -1,10 +1,10 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { SelectProfileContainer } from './profiles'
+import { FooterContainer } from './footer'
 import { FirebaseContext } from '../context/firebase'
 import { Card, Loading, Header } from '../components'
 import * as ROUTES from '../constants/routes';
 import logo from '../logo.svg';
-import { TextSmall } from '../components/form/styles/form';
 
 export function BrowseContainer( {slides}) {
     const [searchTerm, setSearchTerm] = useState('');
@@ -97,6 +97,7 @@ export function BrowseContainer( {slides}) {
                 </Card>
             ))}
         </Card.Group>
+        <FooterContainer />
 
 
         </>
